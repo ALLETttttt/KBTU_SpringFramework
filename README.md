@@ -1,1 +1,1 @@
-# KBTU_SpringFramework
+# KBTU_Spring_Framework
