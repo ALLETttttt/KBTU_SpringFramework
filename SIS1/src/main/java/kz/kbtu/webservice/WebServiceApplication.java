@@ -12,8 +12,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Profile;
 import org.springframework.web.client.RestTemplate;
 
-import java.util.logging.Logger;
-
 @SpringBootApplication
 @Log4j2
 public class WebServiceApplication {
