@@ -3,7 +3,6 @@ package kz.kbtu.webservice;
 import kz.kbtu.webservice.model.Quote;
 
 import lombok.extern.log4j.Log4j2;
-import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
