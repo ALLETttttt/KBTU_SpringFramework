@@ -27,6 +27,7 @@ public class WebServiceApplication {
         return builder.build();
     }
 
+
     @Bean
     @Profile("!test")
     public CommandLineRunner run(RestTemplate restTemplate) throws Exception {
