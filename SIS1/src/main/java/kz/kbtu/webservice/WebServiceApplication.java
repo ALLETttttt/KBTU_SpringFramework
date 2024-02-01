@@ -2,6 +2,7 @@ package kz.kbtu.webservice;
 
 import kz.kbtu.webservice.model.Quote;
 
+import kz.kbtu.webservice.service.QuoteService;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -15,6 +16,7 @@ import org.springframework.web.client.RestTemplate;
 @Log4j2
 public class WebServiceApplication {
 
+    QuoteService quoteService = new QuoteService();
     //Spring IoC -> Spring Inversion of Control
 
 
@@ -31,9 +33,11 @@ public class WebServiceApplication {
     @Bean
     @Profile("!test")
     public CommandLineRunner run(RestTemplate restTemplate) throws Exception {
+        quoteService.init();
         return args -> {
             Quote quote = restTemplate.getForObject(
                     "http://localhost:8081/api/random", Quote.class);
+            assert quote != null;
             log.info(quote.toString());
         };
     }
