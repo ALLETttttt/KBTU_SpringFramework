@@ -1,7 +1,9 @@
 package kz.kbtu.webservice.service;
 
+import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -10,7 +12,8 @@ import java.util.Random;
 @Service
 public class QuoteService {
     @Value("${content}")
-    private static String content;
+    private String content;
+
 
     private static final ArrayList<kz.kbtu.webservice.model.Value> arrayList = new ArrayList<>();
 
