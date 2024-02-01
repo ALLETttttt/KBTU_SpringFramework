@@ -6,6 +6,6 @@ import lombok.extern.slf4j.Slf4j;
 public class BWPrinter implements IPrintable {
     @Override
     public void print(String text) {
-        log.info(String.format("Color text: %s", text));
+        log.info(String.format("Black-white text: %s", text));
     }
 }
