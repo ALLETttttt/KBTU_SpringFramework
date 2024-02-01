@@ -9,9 +9,9 @@ import org.springframework.stereotype.Service;
 @Service
 @AllArgsConstructor
 public class PrinterService {
-    private final IPrintable printable;
+    private final IPrintable printer;
 
     public void print(String text) {
-        printable.print(text);
+        printer.print(text);
     }
 }
