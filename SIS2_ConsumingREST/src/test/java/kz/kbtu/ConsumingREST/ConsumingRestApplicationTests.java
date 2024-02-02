@@ -1,13 +1,13 @@
-package kz.kbtu.webservice;
+package kz.kbtu.ConsumingREST;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class WebServiceApplicationTests {
+class ConsumingRestApplicationTests {
 
-    @Test
-    void contextLoads() {
-    }
+	@Test
+	void contextLoads() {
+	}
 
 }
