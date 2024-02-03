@@ -2,19 +2,27 @@ package kz.kbtu.ConsumingREST.model;
 
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 
 @Data
 public class Store {
 
     // Field based DI
     @Autowired
-    private Item item;
+    @Qualifier("item")
+    private ItemImpl item1;
+
+    @Autowired
+    @Qualifier("newItem")
+    private ItemImpl item2;
 
     public Store() {
-        item = new Item();
+        item1 = new Item();
     }
 
-    public Store(Item item) {
-        this.item = item;
+
+    public Store(Item item1) {
+        this.item1 = item1;
     }
+
 }
