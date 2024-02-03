@@ -3,6 +3,7 @@ package kz.kbtu.WebService;
 import kz.kbtu.WebService.model.Quote;
 
 import kz.kbtu.WebService.service.QuoteService;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -14,9 +15,10 @@ import org.springframework.web.client.RestTemplate;
 
 @SpringBootApplication
 @Log4j2
+@RequiredArgsConstructor
 public class WebServiceApplication {
 
-	QuoteService quoteService = new QuoteService();
+	private final QuoteService quoteService;
 	//Spring IoC -> Spring Inversion of Control
 
 
