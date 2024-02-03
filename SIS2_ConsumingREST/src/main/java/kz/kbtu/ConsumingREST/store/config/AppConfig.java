@@ -1,9 +1,9 @@
-package kz.kbtu.ConsumingREST.config;
+package kz.kbtu.ConsumingREST.store.config;
 
-import kz.kbtu.ConsumingREST.model.Item;
-import kz.kbtu.ConsumingREST.model.ItemImpl;
-import kz.kbtu.ConsumingREST.model.NewItem;
-import kz.kbtu.ConsumingREST.model.Store;
+import kz.kbtu.ConsumingREST.store.model.Item;
+import kz.kbtu.ConsumingREST.store.model.ItemImpl;
+import kz.kbtu.ConsumingREST.store.model.NewItem;
+import kz.kbtu.ConsumingREST.store.model.Store;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

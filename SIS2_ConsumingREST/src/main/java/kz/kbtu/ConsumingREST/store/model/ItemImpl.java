@@ -1,4 +1,4 @@
-package kz.kbtu.ConsumingREST.model;
+package kz.kbtu.ConsumingREST.store.model;
 
 public interface ItemImpl {
 
