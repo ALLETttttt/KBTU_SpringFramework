@@ -16,10 +16,7 @@ public class Store {
     @Qualifier("newItem")
     private ItemImpl item2;
 
-    public Store() {
-        item1 = new Item();
-    }
-
+    public Store() { item1 = new Item(); }
 
     public Store(Item item1) {
         this.item1 = item1;
