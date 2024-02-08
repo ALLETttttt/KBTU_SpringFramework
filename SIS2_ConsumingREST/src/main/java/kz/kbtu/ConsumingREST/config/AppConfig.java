@@ -42,4 +42,8 @@ public class AppConfig {
         return new Person();
     }
 
+    @Bean
+    @Scope(value = ConfigurableBeanFactory.SCOPE_PROTOTYPE)
+    public Person personPrototype() { return new Person(); }
+
 }

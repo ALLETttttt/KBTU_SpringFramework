@@ -18,7 +18,6 @@ public class FooService {
     @Qualifier("barFormatter")
     private Formatter formatter2;
 
-
     @Autowired
     public FooService(FooFormatter fooFormatter) {
         this.fooFormatter = fooFormatter;
