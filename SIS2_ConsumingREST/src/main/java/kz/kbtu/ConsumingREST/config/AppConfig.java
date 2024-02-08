@@ -22,7 +22,7 @@ public class AppConfig {
     @Bean
     public Store store() {
         Store store = new Store();
-        store.setItem1(item());
+        store.setItem(item());
         return store;
     }
 
@@ -41,4 +41,5 @@ public class AppConfig {
     public Person personSingleton() {
         return new Person();
     }
+
 }

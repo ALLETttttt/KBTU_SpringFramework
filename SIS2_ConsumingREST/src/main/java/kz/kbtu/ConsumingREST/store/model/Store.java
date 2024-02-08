@@ -8,16 +8,14 @@ import org.springframework.beans.factory.annotation.Qualifier;
 public class Store {
 
     // Field based DI
-    @Qualifier("item")
-    private Item item1;
+    @Autowired
+    private Item item;
 
-    @Qualifier("newItem")
-    private Item item2;
 
-    public Store() { item1 = new Item(); }
+    public Store() { item = new Item(); }
 
     public Store(Item item) {
-        this.item2 = item;
+        this.item = item;
     }
 
 }
