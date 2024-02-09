@@ -1,11 +1,11 @@
 package kz.kbtu.ConsumingREST.config;
 
-import kz.kbtu.ConsumingREST.car.model.Engine;
-import kz.kbtu.ConsumingREST.car.model.Transmission;
+import kz.kbtu.ConsumingREST.DI.Engine;
+import kz.kbtu.ConsumingREST.DI.Transmission;
 import kz.kbtu.ConsumingREST.scopes.HelloMessageGenerator;
 import kz.kbtu.ConsumingREST.scopes.Person;
-import kz.kbtu.ConsumingREST.store.model.Item;
-import kz.kbtu.ConsumingREST.store.model.Store;
+import kz.kbtu.ConsumingREST.IoC.Item;
+import kz.kbtu.ConsumingREST.IoC.Store;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

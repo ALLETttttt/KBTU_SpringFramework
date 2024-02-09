@@ -1,8 +1,7 @@
-package kz.kbtu.ConsumingREST.store.model;
+package kz.kbtu.ConsumingREST.IoC;
 
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 
 @Data
 public class Store {

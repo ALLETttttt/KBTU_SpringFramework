@@ -1,4 +1,4 @@
-package kz.kbtu.ConsumingREST.store.model;
+package kz.kbtu.ConsumingREST.IoC;
 
 import lombok.Data;
 import org.springframework.stereotype.Component;

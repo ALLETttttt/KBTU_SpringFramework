@@ -1,4 +1,4 @@
-package kz.kbtu.ConsumingREST.foo;
+package kz.kbtu.ConsumingREST.autowired;
 
 import org.springframework.stereotype.Component;
 

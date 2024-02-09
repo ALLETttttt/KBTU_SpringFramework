@@ -1,4 +1,4 @@
-package kz.kbtu.ConsumingREST.foo;
+package kz.kbtu.ConsumingREST.autowired;
 
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;

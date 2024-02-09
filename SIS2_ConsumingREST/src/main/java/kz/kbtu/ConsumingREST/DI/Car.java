@@ -1,4 +1,4 @@
-package kz.kbtu.ConsumingREST.car.model;
+package kz.kbtu.ConsumingREST.DI;
 
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
