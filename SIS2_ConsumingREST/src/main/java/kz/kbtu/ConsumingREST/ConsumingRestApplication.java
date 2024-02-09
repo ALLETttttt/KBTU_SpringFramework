@@ -1,6 +1,6 @@
 package kz.kbtu.ConsumingREST;
 
-import kz.kbtu.ConsumingREST.person.Person;
+import kz.kbtu.ConsumingREST.scopes.Person;
 import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.boot.SpringApplication;
@@ -11,29 +11,29 @@ public class ConsumingRestApplication {
 	private static final String NAME = "John Smith";
 	private static final String NAME_OTHER = "Anna Jones";
 
-	@Test
+//	@Test
 	public static void main(String[] args) {
+		SpringApplication.run(ConsumingRestApplication.class, args);
+//		var context = SpringApplication.run(ConsumingRestApplication.class, args);
 
-		var context = SpringApplication.run(ConsumingRestApplication.class, args);
+//		Person p1 = (Person) context.getBean("personSingleton");
+//		Person p2 = (Person) context.getBean("personSingleton");
+//
+//		p1.setName(NAME);
+//		Assert.assertEquals(NAME, p2.getName());
+//		System.out.println(p2.getName());
+//
+//
+//
+//		Person p3 = (Person) context.getBean("personPrototype");
+//		Person p4 = (Person) context.getBean("personPrototype");
+//
+//		p3.setName(NAME);
+//		p4.setName(NAME_OTHER);
+//		Assert.assertEquals(NAME, p3.getName());
+//		Assert.assertEquals(NAME_OTHER, p4.getName());
 
-		Person p1 = (Person) context.getBean("personSingleton");
-		Person p2 = (Person) context.getBean("personSingleton");
-
-		p1.setName(NAME);
-		Assert.assertEquals(NAME, p2.getName());
-
-
-		Person p3 = (Person) context.getBean("personPrototype");
-		Person p4 = (Person) context.getBean("personPrototype");
-
-		p3.setName(NAME);
-		System.out.println(p3.getName().hashCode());
-
-		p4.setName(NAME);
-		System.out.println(p4.getName().hashCode());
-//		System.out.println(p4.getName().hashCode());
-
-		context.close();
+//		context.close();
 	}
 
 }

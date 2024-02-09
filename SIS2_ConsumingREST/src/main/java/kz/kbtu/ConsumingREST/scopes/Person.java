@@ -1,4 +1,4 @@
-package kz.kbtu.ConsumingREST.person;
+package kz.kbtu.ConsumingREST.scopes;
 
 import lombok.Data;
 
