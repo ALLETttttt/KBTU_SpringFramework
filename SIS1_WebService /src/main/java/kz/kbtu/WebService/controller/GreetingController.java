@@ -16,9 +16,4 @@ public class GreetingController {
         return greetingService.generateGreeting(name);
 
     }
-
-//    @GetMapping("/testGreeting")
-//    public Greeting testGreeting() {
-//        return "testGreeting";
-//    }
 }
