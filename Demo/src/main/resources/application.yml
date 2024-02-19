@@ -1,11 +1,11 @@
 spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/my_db
-    username: my_user
+    username: bakdaulet
     password: password
   jpa:
     hibernate:
-      ddl-auto: create
+      ddl-auto: update
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
