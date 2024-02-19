@@ -1,17 +1,16 @@
 package kz.kbtu.EventHandling.event;
 
+import lombok.Getter;
 import org.springframework.context.ApplicationEvent;
 
 
+@Getter
 public class CustomSpringEvent extends ApplicationEvent {
-    private String message;
+    private final String message;
 
     public CustomSpringEvent(Object source, String message) {
         super(source);
         this.message = message;
     }
 
-    public String getMessage() {
-        return message;
-    }
 }
