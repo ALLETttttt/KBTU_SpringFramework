@@ -12,4 +12,5 @@ public class CustomSpringEventListener
     public void onApplicationEvent(CustomSpringEvent event) {
         System.out.println("Received spring custom event - " + event.getMessage());
     }
+
 }
