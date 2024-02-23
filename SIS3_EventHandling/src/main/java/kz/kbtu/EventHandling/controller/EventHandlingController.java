@@ -1,6 +1,7 @@
 package kz.kbtu.EventHandling.controller;
 
 import kz.kbtu.EventHandling.publisher.AnnotationDrivenEventPublisher;
+import kz.kbtu.EventHandling.publisher.ContextRefreshedPublisher;
 import kz.kbtu.EventHandling.publisher.CustomSpringEventPublisher;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,6 +15,7 @@ public class EventHandlingController {
 
     private final CustomSpringEventPublisher customSpringEventPublisher;
     private final AnnotationDrivenEventPublisher annotationDrivenEventPublisher;
+    private final ContextRefreshedPublisher contextRefreshedPublisher;
 
     @GetMapping("/custom")
     public void customSpringEvent() {
@@ -24,5 +26,10 @@ public class EventHandlingController {
     @GetMapping("/annotation")
     public void annotationEvent() {
         annotationDrivenEventPublisher.publishAnnotationDrivenEvent();
+    }
+
+    @GetMapping("/refreshed")
+    public void refreshedEvent() {
+        contextRefreshedPublisher.publishContextRefreshedEvent();
     }
 }

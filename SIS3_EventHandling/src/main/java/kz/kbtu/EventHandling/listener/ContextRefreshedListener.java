@@ -10,6 +10,5 @@ public class ContextRefreshedListener
     @Override
     public void onApplicationEvent(ContextRefreshedEvent event) {
         System.out.println("Handling context refreshed event. " + event.toString());
-
     }
 }
