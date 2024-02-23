@@ -14,7 +14,6 @@ public class EventHandlingController {
     private final Publisher publisher;
     private String message = "event test version 0.0.1";
 
-
     @GetMapping("/custom")
     public void customSpringEvent() {
         publisher.publishCustomEvent(message);
