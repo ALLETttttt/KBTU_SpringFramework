@@ -35,7 +35,7 @@ public class Publisher {
     }
 
     public void publishGenericEvent() {
-        GenericSpringEvent<String> genericSpringEvent = new GenericSpringEvent<String>(this, "hello");
+        GenericSpringEvent<String> genericSpringEvent = new GenericSpringEvent<String>(this, "hello", "salem");
         applicationEventPublisher.publishEvent(genericSpringEvent);
     }
 }
