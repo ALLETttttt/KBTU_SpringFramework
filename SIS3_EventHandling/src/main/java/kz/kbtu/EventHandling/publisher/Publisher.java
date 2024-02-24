@@ -2,6 +2,8 @@ package kz.kbtu.EventHandling.publisher;
 
 import kz.kbtu.EventHandling.event.CustomSpringEvent;
 import kz.kbtu.EventHandling.event.GenericSpringEvent;
+import kz.kbtu.EventHandling.event.UserCreatedEvent;
+import kz.kbtu.EventHandling.event.UserRemovedEvent;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationEventPublisher;
@@ -37,5 +39,12 @@ public class Publisher {
     public void publishGenericEvent() {
         GenericSpringEvent<String> genericSpringEvent = new GenericSpringEvent<String>(this, "hello", "salem");
         applicationEventPublisher.publishEvent(genericSpringEvent);
+    }
+
+    public void publishUserEvent(final String name) {
+
+        applicationEventPublisher.publishEvent(new UserCreatedEvent(this, name));
+
+        applicationEventPublisher.publishEvent(new UserRemovedEvent(name));
     }
 }

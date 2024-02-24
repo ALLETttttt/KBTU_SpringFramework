@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class EventHandlingController {
 
     private final Publisher publisher;
-    private String message = "event test version 0.0.1";
+    private final String message = "event test version 0.0.1";
 
     @GetMapping("/custom")
     public void customSpringEvent() {
@@ -32,5 +32,10 @@ public class EventHandlingController {
     @GetMapping("/generic")
     public void genericEvent() {
         publisher.publishGenericEvent();
+    }
+
+    @GetMapping("/user-event")
+    public void userEvent() {
+        publisher.publishUserEvent(message);
     }
 }
