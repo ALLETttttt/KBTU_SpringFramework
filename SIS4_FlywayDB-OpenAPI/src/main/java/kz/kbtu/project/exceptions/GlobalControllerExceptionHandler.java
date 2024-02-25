@@ -1,6 +1,5 @@
 package kz.kbtu.project.exceptions;
 
-import kz.kbtu.project.model.Employee;
 import org.springframework.core.convert.ConversionFailedException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
