@@ -5,7 +5,8 @@ import lombok.Data;
 
 @Data
 @AllArgsConstructor
-public class Greeting {
-    private String msg;
-    private String name;
+public class Farewell {
+
+    private String message;
+    private Integer remainingMinutes;
 }

@@ -1,5 +1,7 @@
 package kz.project.Kafka.listener;
 
+import kz.project.Kafka.model.Greeting;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.kafka.annotation.PartitionOffset;
 import org.springframework.kafka.annotation.TopicPartition;
@@ -7,6 +9,7 @@ import org.springframework.kafka.support.KafkaHeaders;
 import org.springframework.messaging.handler.annotation.Header;
 import org.springframework.messaging.handler.annotation.Payload;
 
+@Slf4j
 public class KafkaListeners {
 
     @KafkaListener(topics = "topic", groupId = "foo")
@@ -43,5 +46,12 @@ public class KafkaListeners {
             containerFactory = "filterKafkaListenerContainerFactory")
     public void listenWithFilter(String message) {
         System.out.println("Received Message in filtered listener: " + message);
+    }
+
+    @KafkaListener(
+            topics = "topic",
+            containerFactory = "greetingKafkaListenerContainerFactory")
+    public void greetingListener(Greeting greeting) {
+        log.info("Received from listener: " + greeting.toString());
     }
 }
