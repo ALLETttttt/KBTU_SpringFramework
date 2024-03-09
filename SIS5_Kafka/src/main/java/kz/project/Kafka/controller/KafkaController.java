@@ -18,7 +18,10 @@ import java.util.concurrent.CompletableFuture;
 public class KafkaController {
     @Autowired
     private KafkaTemplate<String, String> kafkaTemplate;
+
+    @Autowired
     private KafkaTemplate<String, Object> multiTypeKafkaTemplate;
+
     private final String message = "hello world";
 
     @GetMapping

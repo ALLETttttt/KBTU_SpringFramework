@@ -11,9 +11,9 @@ import org.springframework.messaging.handler.annotation.Payload;
 
 @Slf4j
 public class KafkaListeners {
-
     @KafkaListener(topics = "topic", groupId = "foo")
     public void listenGroupFoo(String message) {
+        log.info("\"Received Message in group foo: \" + message");
         System.out.println("Received Message in group foo: " + message);
     }
 
