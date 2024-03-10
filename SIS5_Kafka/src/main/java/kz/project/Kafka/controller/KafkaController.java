@@ -44,4 +44,5 @@ public class KafkaController {
         multiTypeKafkaTemplate.send("topic", new Farewell("Farewell", 25));
         multiTypeKafkaTemplate.send("topic", "Simple string message");
     }
+
 }
