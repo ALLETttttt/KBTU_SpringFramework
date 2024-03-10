@@ -1,8 +1,9 @@
-Here is a README file template based on the provided course description:
 
 ---
 
 # Spring Framework and Microservices Course Repository
+
+---
 
 ## Overview
 
