@@ -1,0 +1,20 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/flyway_db
+    username: flyway
+    password: password
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  flyway:
+    baseline-on-migrate: true
+    baseline-version: '0'
+springdoc:
+  api-docs:
+    path: /api-doc
+  swagger-ui:
+    path: /swagger-ui-custom.html
+    operations-sorter: method
