@@ -2,12 +2,13 @@ package kz.project.SOAP;
 
 import kz.project.SOAP.wsdl.NumberToDollars;
 import kz.project.SOAP.wsdl.NumberToDollarsResponse;
+import kz.project.SOAP.wsdl.NumberToWords;
+import kz.project.SOAP.wsdl.NumberToWordsResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.ws.client.core.support.WebServiceGatewaySupport;
-import org.springframework.ws.soap.client.core.SoapActionCallback;
-
 import java.math.BigDecimal;
+import java.math.BigInteger;
 
 
 public class Client extends WebServiceGatewaySupport {
@@ -24,9 +25,22 @@ public class Client extends WebServiceGatewaySupport {
                 getWebServiceTemplate()
                         .marshalSendAndReceive(
                                 "https://www.dataaccess.com/webservicesserver/numberconversion.wso?WSDL",
-                                request,
-                                new SoapActionCallback(
-                                        "https://spring.io/guides/gs-producing-web-service/GetCountryRequest")
+                                request
+                        );
+        return response;
+    }
+
+    public NumberToWordsResponse getWords(BigInteger number) {
+        log.info("Entered number: " + number);
+
+        NumberToWords request = new NumberToWords();
+        request.setUbiNum(number);
+
+        NumberToWordsResponse response = (NumberToWordsResponse)
+                getWebServiceTemplate()
+                        .marshalSendAndReceive(
+                                "https://www.dataaccess.com/webservicesserver/numberconversion.wso?WSDL",
+                                request
                         );
         return response;
     }
