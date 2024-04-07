@@ -21,13 +21,12 @@ public class Client extends WebServiceGatewaySupport {
         NumberToDollars request = new NumberToDollars();
         request.setDNum(number);
 
-        NumberToDollarsResponse response = (NumberToDollarsResponse)
+        return (NumberToDollarsResponse)
                 getWebServiceTemplate()
                         .marshalSendAndReceive(
                                 "https://www.dataaccess.com/webservicesserver/numberconversion.wso?WSDL",
                                 request
                         );
-        return response;
     }
 
     public NumberToWordsResponse getWords(BigInteger number) {
@@ -36,13 +35,12 @@ public class Client extends WebServiceGatewaySupport {
         NumberToWords request = new NumberToWords();
         request.setUbiNum(number);
 
-        NumberToWordsResponse response = (NumberToWordsResponse)
+        return (NumberToWordsResponse)
                 getWebServiceTemplate()
                         .marshalSendAndReceive(
                                 "https://www.dataaccess.com/webservicesserver/numberconversion.wso?WSDL",
                                 request
                         );
-        return response;
     }
 
 }
