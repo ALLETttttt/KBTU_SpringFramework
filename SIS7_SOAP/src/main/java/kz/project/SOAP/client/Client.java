@@ -1,4 +1,4 @@
-package kz.project.SOAP;
+package kz.project.SOAP.client;
 
 import kz.project.SOAP.wsdl.NumberToDollars;
 import kz.project.SOAP.wsdl.NumberToDollarsResponse;

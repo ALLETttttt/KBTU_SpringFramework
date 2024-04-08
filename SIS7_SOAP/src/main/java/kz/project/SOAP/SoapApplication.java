@@ -1,5 +1,6 @@
 package kz.project.SOAP;
 
+import kz.project.SOAP.client.Client;
 import kz.project.SOAP.wsdl.NumberToDollarsResponse;
 import kz.project.SOAP.wsdl.NumberToWordsResponse;
 import org.springframework.boot.CommandLineRunner;

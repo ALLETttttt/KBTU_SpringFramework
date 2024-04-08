@@ -1,5 +1,6 @@
-package kz.project.SOAP;
+package kz.project.SOAP.config;
 
+import kz.project.SOAP.client.Client;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.oxm.jaxb.Jaxb2Marshaller;
