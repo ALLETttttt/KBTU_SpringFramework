@@ -1,5 +1,5 @@
 FROM openjdk:alpine
 VOLUME /tmp
-ARG JAR_FILE
-COPY ${JAR_FILE} app.jar
-ENTRYPOINT ["java","-jar","/app.jar"]
+COPY run.sh .
+COPY target/SIS8_Docker-0.0.1-SNAPSHOT.jar app.jar
+ENTRYPOINT ["run.sh"]
