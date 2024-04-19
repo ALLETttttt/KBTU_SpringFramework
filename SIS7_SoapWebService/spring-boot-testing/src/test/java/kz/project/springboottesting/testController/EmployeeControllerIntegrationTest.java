@@ -4,36 +4,24 @@ import kz.project.springboottesting.SpringBootTestingApplication;
 import kz.project.springboottesting.entity.Employee;
 import kz.project.springboottesting.repository.EmployeeRepository;
 import kz.project.springboottesting.service.EmployeeService;
+import kz.project.springboottesting.service.Impl.EmployeeServiceImpl;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.context.TestConfiguration;
+import org.springframework.context.annotation.Bean;
 import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.junit.Test;
 import org.springframework.http.MediaType;
+
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.hamcrest.Matchers.is;
-import org.junit.Test;
-import org.springframework.http.MediaType;
-import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.test.context.junit4.SpringRunner;
-import static org.mockito.BDDMockito.given;
-import static org.hamcrest.Matchers.hasSize;
-import static org.hamcrest.Matchers.is;
-import java.util.Arrays;
-import java.util.List;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 
 
 @RunWith(SpringRunner.class)
@@ -51,18 +39,30 @@ public class EmployeeControllerIntegrationTest {
     @Autowired
     private EmployeeRepository repository;
 
-    @Autowired
-    private EmployeeService service;
+    @TestConfiguration
+    static class EmployeeServiceImplTestContextConfiguration {
 
-    // write test cases here
+        @Bean
+        public EmployeeService employeeService() {
+            return new EmployeeServiceImpl();
+        }
+    }
+
+    @Autowired
+    private EmployeeService employeeService;
 
     @Test
     public void givenEmployees_whenGetEmployees_thenStatus200()
             throws Exception {
 
-        Employee employee = new Employee("bob");
+        // Act
+        Employee employee = new Employee();
+
+        // Assign
+        employee.setName("bob");
         repository.save(employee);
 
+        // Assert
         mvc.perform(get("/api/employees")
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
@@ -71,20 +71,4 @@ public class EmployeeControllerIntegrationTest {
                 .andExpect(jsonPath("$[0].name", is("bob")));
     }
 
-    @Test
-    public void givenEmployees_whenGetEmployees_thenReturnJsonArray()
-            throws Exception {
-
-        Employee alex = new Employee("alex");
-
-        List<Employee> allEmployees = Arrays.asList(alex);
-
-        given(service.getAllEmployees()).willReturn(allEmployees);
-
-        mvc.perform(get("/api/employees")
-                        .contentType(MediaType.APPLICATION_JSON))
-                .andExpect(status().isOk())
-                .andExpect(jsonPath("$", hasSize(1)))
-                .andExpect(jsonPath("$[0].name", is(alex.getName())));
-    }
 }

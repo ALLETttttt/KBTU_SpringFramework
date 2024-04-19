@@ -8,7 +8,7 @@ import java.util.List;
 
 //@Repository
 public interface EmployeeRepository extends JpaRepository<Employee, Long> {
-    List<Employee> findByName(String name);
+    Employee findByName(String name);
 
     Employee getEmployeeById(Long id);
 
