@@ -1,5 +1,6 @@
 package kz.projcet.SpringSecurity.controller;
 
+import jakarta.annotation.security.RolesAllowed;
 import jakarta.validation.Valid;
 import kz.projcet.SpringSecurity.entity.Product;
 import kz.projcet.SpringSecurity.repository.ProductRepository;
@@ -17,6 +18,7 @@ public class ProductApi {
     @Autowired private ProductRepository repo;
 
     @PostMapping
+    @RolesAllowed("ROLE_EDITOR")
     public ResponseEntity<Product> create(@RequestBody @Valid Product product) {
         Product savedProduct = repo.save(product);
         URI productURI = URI.create("/products/" + savedProduct.getId());
@@ -24,6 +26,7 @@ public class ProductApi {
     }
 
     @GetMapping
+    @RolesAllowed({"ROLE_CUSTOMER", "ROLE_EDITOR"})
     public List<Product> list() {
         return repo.findAll();
     }
