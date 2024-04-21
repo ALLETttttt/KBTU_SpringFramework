@@ -1,25 +1,19 @@
+version: '3.8'
 services:
-  proxy:
-    build: .
-    networks:
-      - frontend
-  app:
-    build: ../SIS7_SoapWebService/soap-client
-    networks:
-      - frontend
-      - backend
+  soap_producer_app:
+    build:
+      dockerfile: Dockerfile
+      context: ../SIS7_SoapWebService/soap-producer
+    ports:
+      - "8080:8080"
+  soap_client_app:
+    build:
+      dockerfile: Dockerfile
+      context: ../SIS7_SoapWebService/soap-client
+    ports:
+      - "8081:8080"
   db:
     image: postgres
-    networks:
-      - backend
+    ports:
+      - "8001:5432"
 
-networks:
-  frontend:
-    # Use a custom driver
-    driver: custom-driver-1
-  backend:
-    # Use a custom driver which takes special options
-    driver: custom-driver-2
-    driver_opts:
-      foo: "1"
-      bar: "2"
