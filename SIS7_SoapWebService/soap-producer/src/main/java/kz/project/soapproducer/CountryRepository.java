@@ -1,4 +1,4 @@
-package kz.project.SoapWebService.country;
+package kz.project.soapproducer;
 
 
 import jakarta.annotation.PostConstruct;

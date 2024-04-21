@@ -1,4 +1,4 @@
-package kz.project.SoapWebService.country;
+package kz.project.soapproducer;
 
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.ApplicationContext;

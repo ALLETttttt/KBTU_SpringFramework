@@ -1,4 +1,4 @@
-package kz.project.SoapWebService.country;
+package kz.project.soapproducer;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ws.server.endpoint.annotation.Endpoint;
