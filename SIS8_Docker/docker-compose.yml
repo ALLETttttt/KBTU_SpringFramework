@@ -10,6 +10,8 @@ services:
     build:
       dockerfile: Dockerfile
       context: ../SIS7_SoapWebService/soap-client
+    depends_on:
+      - soap_producer_app
     ports:
       - "8081:8080"
   db:

@@ -1,8 +1,6 @@
 package kz.project.SoapWebService;
 
 import io.spring.guides.gs_producing_web_service.GetCountryResponse;
-import kz.project.SoapWebService.country.CountryClient;
-import kz.project.SoapWebService.number.NumberClient;
 import kz.project.SoapWebService.wsdl.NumberToDollarsResponse;
 import kz.project.SoapWebService.wsdl.NumberToWordsResponse;
 import org.springframework.boot.CommandLineRunner;

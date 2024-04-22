@@ -1,7 +1,5 @@
-package kz.project.SoapWebService.config;
+package kz.project.SoapWebService;
 
-import kz.project.SoapWebService.country.CountryClient;
-import kz.project.SoapWebService.number.NumberClient;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.oxm.jaxb.Jaxb2Marshaller;
