@@ -24,10 +24,10 @@ management:
       exposure:
         include: health
   health:
-    circuitbreakers:
+    circuit-breakers:
       enabled: true
 resilience4j:
-  circuitbreaker:
+  circuit breaker:
     instances:
       order-service:
         sliding-window-type: COUNT_BASED
