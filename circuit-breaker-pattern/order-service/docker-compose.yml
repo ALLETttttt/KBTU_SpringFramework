@@ -1,0 +1,13 @@
+services:
+  order:
+    build: ./
+    ports:
+      - "1010:1010"
+    depends_on:
+      - address
+  address:
+    build:
+      dockerfile: Dockerfile
+      context: ../address-service
+    ports:
+      - "9090:9090"
