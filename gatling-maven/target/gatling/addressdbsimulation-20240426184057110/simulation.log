@@ -1,5 +1,0 @@
-RUN	addressdb.AddressDbSimulation	addressdbsimulation	1714156857110	test	3.9.0
-USER	Testing addresses	START	1714156859448
-REQUEST		Get All Addresses	1714156859446	1714156859453	OK	 
-REQUEST		Get Address by postal code	1714156861462	1714156861506	OK	 
-USER	Testing addresses	END	1714156861509

@@ -1,4 +1,0 @@
-RUN	addressdb.AddressDbSimulation	addressdbsimulation	1714154579001	test	3.9.0
-USER	Testing existing addresses	START	1714154582007
-REQUEST		Get all addresses	1714154582004	1714154582111	OK	 
-USER	Testing existing addresses	END	1714154582116
