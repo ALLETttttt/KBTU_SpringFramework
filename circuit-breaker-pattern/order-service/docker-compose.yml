@@ -10,4 +10,4 @@ services:
       dockerfile: Dockerfile
       context: ../address-service
     ports:
-      - "9091:9090"
+      - "9090:9090"

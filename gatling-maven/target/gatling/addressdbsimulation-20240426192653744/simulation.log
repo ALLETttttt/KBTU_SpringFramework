@@ -1,0 +1,41 @@
+RUN	addressdb.AddressDbSimulation	addressdbsimulation	1714159613744	test	3.9.0
+USER	Testing addresses	START	1714159623536
+REQUEST		Get All Addresses	1714159623531	1714159623538	KO	j.n.ConnectException: Connection refused
+USER	Testing addresses	START	1714159624508
+REQUEST		Get All Addresses	1714159624506	1714159624509	KO	j.n.ConnectException: Connection refused
+REQUEST		Get Address by postal code	1714159625543	1714159625548	KO	j.n.ConnectException: Connection refused
+USER	Testing addresses	END	1714159625552
+USER	Testing addresses	START	1714159626507
+REQUEST		Get All Addresses	1714159626506	1714159626509	KO	j.n.ConnectException: Connection refused
+REQUEST		Get Address by postal code	1714159626511	1714159626512	KO	j.n.ConnectException: Connection refused
+USER	Testing addresses	END	1714159626512
+USER	Testing addresses	START	1714159627509
+REQUEST		Get All Addresses	1714159627506	1714159627511	KO	j.n.ConnectException: Connection refused
+REQUEST		Get Address by postal code	1714159628512	1714159628516	KO	j.n.ConnectException: Connection refused
+USER	Testing addresses	END	1714159628516
+USER	Testing addresses	START	1714159629510
+REQUEST		Get All Addresses	1714159629506	1714159629512	KO	j.n.ConnectException: Connection refused
+REQUEST		Get Address by postal code	1714159629513	1714159629514	KO	j.n.ConnectException: Connection refused
+USER	Testing addresses	END	1714159629515
+USER	Testing addresses	START	1714159630509
+REQUEST		Get All Addresses	1714159630506	1714159630510	KO	j.n.ConnectException: Connection refused
+REQUEST		Get Address by postal code	1714159631515	1714159631518	KO	j.n.ConnectException: Connection refused
+USER	Testing addresses	END	1714159631519
+USER	Testing addresses	START	1714159632509
+REQUEST		Get All Addresses	1714159632507	1714159632512	KO	j.n.ConnectException: Connection refused
+REQUEST		Get Address by postal code	1714159632512	1714159632513	KO	j.n.ConnectException: Connection refused
+USER	Testing addresses	END	1714159632513
+USER	Testing addresses	START	1714159633508
+REQUEST		Get All Addresses	1714159633506	1714159633509	KO	j.n.ConnectException: Connection refused
+REQUEST		Get Address by postal code	1714159634514	1714159634518	KO	j.n.ConnectException: Connection refused
+USER	Testing addresses	END	1714159634518
+USER	Testing addresses	START	1714159635508
+REQUEST		Get All Addresses	1714159635506	1714159635510	KO	j.n.ConnectException: Connection refused
+REQUEST		Get Address by postal code	1714159635510	1714159635512	KO	j.n.ConnectException: Connection refused
+USER	Testing addresses	END	1714159635513
+USER	Testing addresses	START	1714159636508
+REQUEST		Get All Addresses	1714159636506	1714159636509	KO	j.n.ConnectException: Connection refused
+REQUEST		Get Address by postal code	1714159637513	1714159637517	KO	j.n.ConnectException: Connection refused
+USER	Testing addresses	END	1714159637518
+REQUEST		Get Address by postal code	1714159638512	1714159638516	KO	j.n.ConnectException: Connection refused
+USER	Testing addresses	END	1714159638517

@@ -49,6 +49,12 @@ public class DataController {
       dataService.getSecuredData("Secured for USER/ADMIN " + authentication.getName()));
   }
 
+  @Secured("ROLE_READER")
+  @GetMapping("/reader")
+  public String readerInfo() {
+    return "User with role ROLE_READER is reading";
+  }
+
   @Secured("ROLE_ADMIN")
   @GetMapping("/admins/all")
   public ResponseEntity<Data> getDataForAdmins(Authentication authentication) {

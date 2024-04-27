@@ -8,8 +8,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
-@RequestMapping("addresses")
+@RequestMapping("/addresses")
 public class AddressController {
     @Autowired
     private AddressService addressService;
@@ -17,6 +19,11 @@ public class AddressController {
     @GetMapping("/{postalCode}")
     public Address getAddressByPostalCode(@PathVariable("postalCode") String postalCode) {
         return addressService.getAddressByPostalCode(postalCode);
+    }
+
+    @GetMapping()
+    public List<Address> getAllAddresses() {
+        return addressService.getAllAddresses();
     }
 
 }

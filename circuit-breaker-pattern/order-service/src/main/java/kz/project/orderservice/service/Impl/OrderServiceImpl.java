@@ -12,6 +12,8 @@ import org.springframework.http.*;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.List;
+
 
 @Service
 public class OrderServiceImpl implements OrderService {
@@ -42,6 +44,11 @@ public class OrderServiceImpl implements OrderService {
             order.setShippingCity(addressDTO.getCity());
         }
         return order;
+    }
+
+    @Override
+    public List<Order> getAllOrders() {
+        return orderRepository.findAll();
     }
 
     private Type fallbackMethod(Exception e) {
